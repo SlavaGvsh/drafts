@@ -49,12 +49,17 @@
       </div>
       <header id="header">
          <div class="header__container">
+            <span class="menu__btn">
+               <i class="fa fa-bars"></i>
+            </span>
             <h1 class="logo"><a href="#">Company Name</a></h1>
             <nav class="menu">
+               
                <ul class="menu__list">
                   <li class="menu__item">
                      <a href="#" class="menu__link has-dropdown">WHY US</a>
                      <div class="menu-sub__holder">
+
                         <ul class="menu-sub__list">
                            <li class="menu__item ">
                               <a class="menu__link" href="#">Profitable Partnerships</a>
@@ -132,7 +137,14 @@
          </section>
          <section class="main-content__container">
             <div class="recent-posts">
-               <div class="recent-posts__title">Recent posts</div>
+               <div class="recent-posts__header">
+                  <div class="recent-posts__title">Recent posts</div>
+                  <div class="search-block">
+                     <form action="#">
+                        <input class="search-block__input" type="text" name="search" placeholder="Search blog">
+                     </form>
+                  </div>
+               </div>
                <article class="recent-posts__items">
                   <!-- 1post -->
                   <div class="post">
@@ -249,14 +261,8 @@
                   </div>
 
                </article>
-
             </div>
             <aside id="sidebar">
-               <div class="search-block">
-                  <form action="#">
-                     <input class="search-block__input" type="text" name="search" placeholder="Search blog">
-                  </form>
-               </div>
                <div class="sidebar-info">
                   <h2 class="sidebar-info__title">Announcements</h2>
                   <ul class="sidebar-info__list">
@@ -312,7 +318,7 @@
          </section>
          <section class="subscription">
             <div class="subscription__container">
-               <h3 class="subscription__title">Sign up today – 7 day money back guarantee</h3>
+               <h3 class="subscription__title">Sign up today<span>– 7 day money back</span> guarantee</h3>
                <ul class="subscription__list">
                   <li class="subscription__info">
                      <h4 class="info__title">MONTHLY</h4>
@@ -425,10 +431,12 @@
                            safety on the internet. Our service is backed by multiple gateways worldwide with access in
                            28+ countries, 44+ regions.</a></li>
                      <li><span><a href="#">Map data provided by Google.</a></span></li>
-                     <li><span><a href="#">PC Mag Editor’s Choice award image reprinted with permission. © 2012 Ziff Davis,
-                           Inc. All Rights Reserved.
-                           PC Mag quote reprinted from www.pcmag.com with permission. © 2012 Ziff Davis, Inc. All Rights
-                           Reserved.</a></span></li>
+                     <li><span><a href="#">PC Mag Editor’s Choice award image reprinted with permission. © 2012 Ziff
+                              Davis,
+                              Inc. All Rights Reserved.
+                              PC Mag quote reprinted from www.pcmag.com with permission. © 2012 Ziff Davis, Inc. All
+                              Rights
+                              Reserved.</a></span></li>
                      <li><span><a href="#">© London Trust Media, Inc. All Rights Reserved.</a></span></li>
                   </ul>
                   <h4>SOCIAL</h4>
@@ -454,6 +462,13 @@
             $(this).next(".menu-sub__holder").toggleClass('open-menu');
             // $(".menu-sub__holder").slideToggle();
          });
+
+         $(".menu__btn").click(function () {
+            // $(this).toggleClass(""active"");
+            $(".menu").toggleClass('open-menu');
+            // $(".menu__list").slideToggle();
+         });
+
 
          $(document).mouseup(function (e) { // событие клика по веб-документу
             var div = $(".has-dropdown"); // тут указываем ID элемента
